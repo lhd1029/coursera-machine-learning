@@ -1,0 +1,11 @@
+clc;
+clear;
+data = xlsread('ex1data3.xlsx');
+x = data(:, 1);
+y = data(:, 2);
+plotData(x,y);
+hold on;
+theta = polyfit(x,y,6);
+x1=linspace(0,40);
+y1=theta(1)*x1.^6+theta(2)*x1.^5+theta(3)*x1.^4+theta(4)*x1.^3+theta(5)*x1.^2+theta(6)*x1.^1+theta(7)*x1.^0;
+plot(x1,y1);
